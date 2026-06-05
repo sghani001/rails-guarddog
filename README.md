@@ -6,7 +6,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Ruby Version](https://img.shields.io/badge/ruby-%3E%3D2.7-red.svg)](https://www.ruby-lang.org/)
 [![Rails Version](https://img.shields.io/badge/rails-%3E%3D6.0-red.svg)](https://rubyonrails.org/)
-[![CI Status](https://github.com/sghani001/rails-guarddog/workflows/Tests/badge.svg)](https://github.com/sghani001/rails-guarddog/actions)
 [![Code Quality](https://img.shields.io/badge/code%20quality-A-brightgreen.svg)](https://github.com/yourusername/rails-guarddog)
 ![Status](https://img.shields.io/badge/status-Production%20Ready-brightgreen.svg)
 
