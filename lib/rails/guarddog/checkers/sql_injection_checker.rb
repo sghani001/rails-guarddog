@@ -6,7 +6,7 @@ module Rails
           glob_files('app/**/*.rb').each do |file|
             content = File.read(file)
             content.each_line.with_index do |line, idx|
-              if line.match?(/\.where\s*\(\s*['"]\s*#{.*}/) || line.match?(/\.find_by_sql\s*\(/)
+              if line.match?(/\.where\s*\(\s*['"].*#\{/) || line.match?(/\.find_by_sql\s*\(/)
                 add_finding(
                   severity: :high,
                   message: "Potential SQL injection: using string interpolation in queries",
