@@ -1,4 +1,4 @@
-# Rails GuardDog 🐕 v1.0.0
+# Rails GuardDog 🐕 v0.1.0
 
 [![Gem Version](https://badge.fury.io/rb/rails-guarddog.svg)](https://badge.fury.io/rb/rails-guarddog)
 [![Downloads](https://img.shields.io/gem/dt/rails-guarddog.svg)](https://rubygems.org/gems/rails-guarddog)
@@ -102,7 +102,7 @@ rake guarddog:ci
 ### Console Report
 ```
 ====================================================================
-Rails GuardDog Security Report v1.0.0
+Rails GuardDog Security Report v0.1.0
 ====================================================================
 
 [CRITICAL] (5 findings)
@@ -378,6 +378,6 @@ of this software and associated documentation files (the "Software")...
 
 ---
 
-**v1.0.0** | **Production Ready** | **MIT License** | ⭐ [Star on GitHub](https://github.com/sghani001/rails-guarddog)
+**v0.1.0** | **Production Ready** | **MIT License** | ⭐ [Star on GitHub](https://github.com/sghani001/rails-guarddog)
 
 *Beyond brakeman. Detect what others miss.* 🐕🔒
