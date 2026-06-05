@@ -2,11 +2,11 @@
 
 [![Gem Version](https://badge.fury.io/rb/rails-guarddog.svg)](https://badge.fury.io/rb/rails-guarddog)
 [![Downloads](https://img.shields.io/gem/dt/rails-guarddog.svg)](https://rubygems.org/gems/rails-guarddog)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/rails-guarddog.svg)](https://github.com/yourusername/rails-guarddog)
+[![GitHub Stars](https://img.shields.io/github/stars/sghani001/rails-guarddog.svg)](https://github.com/sghani001/rails-guarddog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Ruby Version](https://img.shields.io/badge/ruby-%3E%3D2.7-red.svg)](https://www.ruby-lang.org/)
 [![Rails Version](https://img.shields.io/badge/rails-%3E%3D6.0-red.svg)](https://rubyonrails.org/)
-[![Code Quality](https://img.shields.io/badge/code%20quality-A-brightgreen.svg)](https://github.com/yourusername/rails-guarddog)
+[![Code Quality](https://img.shields.io/badge/code%20quality-A-brightgreen.svg)](https://github.com/sghani001/rails-guarddog)
 ![Status](https://img.shields.io/badge/status-Production%20Ready-brightgreen.svg)
 
 Production-grade security scanner for Rails applications. **Beyond brakeman** — detects AI injection, DoS patterns, supply chain attacks, GraphQL authorization gaps, and more.
@@ -342,8 +342,8 @@ Contributions welcome! Areas for enhancement:
 - Advanced AST analysis
 - Machine learning pattern detection
 
-[GitHub Issues](https://github.com/yourusername/rails-guarddog/issues)
-[GitHub Discussions](https://github.com/yourusername/rails-guarddog/discussions)
+[GitHub Issues](https://github.com/sghani001/rails-guarddog/issues)
+[GitHub Discussions](https://github.com/sghani001/rails-guarddog/discussions)
 
 ---
 
@@ -363,9 +363,9 @@ of this software and associated documentation files (the "Software")...
 ## 🔗 Links
 
 - **RubyGems:** https://rubygems.org/gems/rails-guarddog
-- **GitHub:** https://github.com/yourusername/rails-guarddog
-- **Issues:** https://github.com/yourusername/rails-guarddog/issues
-- **Changelog:** https://github.com/yourusername/rails-guarddog/releases
+- **GitHub:** https://github.com/sghani001/rails-guarddog
+- **Issues:** https://github.com/sghani001/rails-guarddog/issues
+- **Changelog:** https://github.com/sghani001/rails-guarddog/releases
 
 ---
 
@@ -374,10 +374,10 @@ of this software and associated documentation files (the "Software")...
 - 📖 [Full Documentation](README.md)
 - 🚀 [Quick Start Guide](QUICK_START.md)
 - 🔒 [Security Details](SECURITY_COVERAGE.md)
-- 💬 [GitHub Discussions](https://github.com/yourusername/rails-guarddog/discussions)
+- 💬 [GitHub Discussions](https://github.com/sghani001/rails-guarddog/discussions)
 
 ---
 
-**v1.0.0** | **Production Ready** | **MIT License** | ⭐ [Star on GitHub](https://github.com/yourusername/rails-guarddog)
+**v1.0.0** | **Production Ready** | **MIT License** | ⭐ [Star on GitHub](https://github.com/sghani001/rails-guarddog)
 
 *Beyond brakeman. Detect what others miss.* 🐕🔒
