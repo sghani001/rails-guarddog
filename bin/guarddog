@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+require 'rails/guarddog'
+
+if ARGV[0] == 'scan'
+  scanner = Rails::Guarddog::Scanner.new
+  findings = scanner.run
+  reporter = Rails::Guarddog::Reporters::ConsoleReporter.new(findings)
+  reporter.report
+elsif ARGV[0] == 'report'
+  scanner = Rails::Guarddog::Scanner.new
+  findings = scanner.run
+  html_reporter = Rails::Guarddog::Reporters::HtmlReporter.new(findings)
+  path = html_reporter.report
+  puts "Report generated: #{path}"
+else
+  puts "Usage: guarddog [scan|report]"
+end
