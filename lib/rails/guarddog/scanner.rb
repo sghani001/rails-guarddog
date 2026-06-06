@@ -22,7 +22,7 @@ module Rails
 
       def load_checkers
         checkers_dir = File.expand_path('../guarddog/checkers', __FILE__)
-        Dir.glob("#{checkers_dir}/*_checker.rb").map do |file|
+        Dir.glob("#{checkers_dir}/*_checker.rb").reject { |f| f.include?('base_checker') }.map do |file|
           require file
           class_name = File.basename(file, '.rb').camelize
           Checkers.const_get(class_name)
