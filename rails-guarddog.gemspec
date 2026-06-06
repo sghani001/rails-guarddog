@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["security@example.com"]
   spec.summary       = "Advanced security checker for Rails apps"
   spec.description   = "Rails GuardDog: Beyond brakeman — AI injection, DoS, supply chain, GraphQL auth, and more"
-  spec.homepage      = "https://github.com/example/rails-guarddog"
+  spec.homepage      = "https://github.com/sghani001/rails-guarddog"
   spec.license       = "MIT"
 
   spec.files         = Dir.glob("{lib,bin,config}/**/*") + ["README.md", "LICENSE"]
