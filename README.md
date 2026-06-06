@@ -1,12 +1,12 @@
-# Rails GuardDog 🐕 v0.1.0
+# Rails GuardDog 🐕
 
 [![Gem Version](https://badge.fury.io/rb/rails-guarddog.svg)](https://badge.fury.io/rb/rails-guarddog)
 [![Downloads](https://img.shields.io/gem/dt/rails-guarddog.svg)](https://rubygems.org/gems/rails-guarddog)
-[![GitHub Stars](https://img.shields.io/github/stars/sghani001/rails-guarddog.svg)](https://github.com/sghani001/rails-guarddog)
+[![GitHub Stars](https://img.shields.io/github/stars/sghani001/rails-guarddog.svg)](https://github.com/sghani001/rails-guarddog/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Ruby Version](https://img.shields.io/badge/ruby-%3E%3D2.7-red.svg)](https://www.ruby-lang.org/)
+[![Ruby Version](https://img.shields.io/badge/ruby-%3E%3D3.0-red.svg)](https://www.ruby-lang.org/)
 [![Rails Version](https://img.shields.io/badge/rails-%3E%3D6.0-red.svg)](https://rubyonrails.org/)
-[![Code Quality](https://img.shields.io/badge/code%20quality-A-brightgreen.svg)](https://github.com/sghani001/rails-guarddog)
+[![Issues](https://img.shields.io/github/issues/sghani001/rails-guarddog.svg)](https://github.com/sghani001/rails-guarddog/issues)
 ![Status](https://img.shields.io/badge/status-Production%20Ready-brightgreen.svg)
 
 Production-grade security scanner for Rails applications. **Beyond brakeman** — detects AI injection, DoS patterns, supply chain attacks, GraphQL authorization gaps, and more.
@@ -34,12 +34,12 @@ Production-grade security scanner for Rails applications. **Beyond brakeman** �
 
 | Metric | Value |
 |--------|-------|
-| **Version** | 1.0.0 |
+| **Version** | [![Gem Version](https://badge.fury.io/rb/rails-guarddog.svg)](https://badge.fury.io/rb/rails-guarddog) |
+| **Total Downloads** | [![Downloads](https://img.shields.io/gem/dt/rails-guarddog.svg)](https://rubygems.org/gems/rails-guarddog) |
 | **Security Checkers** | 12 |
 | **Report Formats** | 3 (Console, HTML, JSON) |
 | **Dependencies** | 2 (parser, ast) |
 | **Lines of Code** | ~2,000 |
-| **Test Coverage** | Ready for RSpec |
 | **License** | MIT |
 
 ---
@@ -78,7 +78,7 @@ rake guarddog:ci
 ### Authentication & Authorization
 - **IDOR Detection** — Object access without ownership verification
 - **GraphQL Authorization** — Missing field-level auth checks
-- **Open Redirect** — User input in redirect_to without validation
+- **Open Redirect** — User input in `redirect_to` without validation
 - **Rate Limiting Audit** — Missing rack-attack configuration
 
 ### Injection Attacks
@@ -88,7 +88,7 @@ rake guarddog:ci
 
 ### Data Protection
 - **CSRF Protection** — Disabled without documented reason
-- **Mass Assignment** — `permit!` vulnerabilities (FIXES BRAKEMAN BUG)
+- **Mass Assignment** — `permit!` vulnerabilities
 - **Hardcoded Secrets** — API keys, tokens, passwords in code (ALWAYS-ON)
 
 ### Resource Management
@@ -101,19 +101,19 @@ rake guarddog:ci
 
 ### Console Report
 ```
-====================================================================
-Rails GuardDog Security Report v0.1.0
-====================================================================
+============================================================
+          Rails GuardDog Security Report
+============================================================
 
 [CRITICAL] (5 findings)
   Mass Assignment — permit! allows ALL parameters
     app/controllers/users_controller.rb:15
     Fix: Use permit(:name, :email, :age) for specific fields
-    
+
   AI Injection — User input in LLM prompt
     app/services/chat_service.rb:42
     Fix: Sanitize: prompt = 'Template: ' + sanitize(params[:text])
-    
+
   Hardcoded Secret — API Key detected
     config/initializers/api.rb:3
     Fix: Move to Rails.application.credentials
@@ -122,14 +122,14 @@ Rails GuardDog Security Report v0.1.0
   DoS: Unbounded query without limit
     app/controllers/posts_controller.rb:5
     Fix: Add .limit(100) or use pagination
-    
+
   ReDoS: Dangerous regex pattern
     app/models/validator.rb:22
     Fix: Simplify regex or add timeout
 
-====================================================================
+============================================================
 Total findings: 15 | Critical: 5 | High: 8
-====================================================================
+============================================================
 ```
 
 ### HTML Report
@@ -261,7 +261,7 @@ skip_before_action :verify_authenticity_token, if: :json_request?
 ```
 **CWE:** 352 | **OWASP:** A01:2021
 
-### 4. Mass Assignment ⭐ (FIXES BRAKEMAN BUG)
+### 4. Mass Assignment
 ```ruby
 # ❌ CRITICAL
 params.permit!
@@ -271,7 +271,7 @@ params.require(:user).permit(:name, :email, :age)
 ```
 **CWE:** 915 | **OWASP:** A01:2021
 
-### 5. Hardcoded Secrets ⭐ (FIXES BRAKEMAN BUG #1989)
+### 5. Hardcoded Secrets
 ```ruby
 # ❌ CRITICAL
 API_KEY = "sk_live_abc123def456"
@@ -282,7 +282,7 @@ Rails.application.credentials.api_key
 ```
 **CWE:** 798 | **OWASP:** A02:2021
 
-### 6. DoS/ReDoS ⭐ NEW
+### 6. DoS/ReDoS
 ```ruby
 # ❌ HIGH RISK
 User.all
@@ -294,7 +294,7 @@ User.limit(100)
 ```
 **CWE:** 400, 1333 | **OWASP:** A05:2021
 
-### 7. IDOR ⭐ NEW
+### 7. IDOR
 ```ruby
 # ❌ CRITICAL
 @post = Post.find(params[:id])
@@ -305,7 +305,7 @@ authorize @post
 ```
 **CWE:** 639 | **OWASP:** A01:2021
 
-### 8. AI/LLM Prompt Injection ⭐ ORIGINAL
+### 8. AI/LLM Prompt Injection
 ```ruby
 # ❌ CRITICAL
 response = client.messages.create(
@@ -342,21 +342,13 @@ Contributions welcome! Areas for enhancement:
 - Advanced AST analysis
 - Machine learning pattern detection
 
-[GitHub Issues](https://github.com/sghani001/rails-guarddog/issues)
-[GitHub Discussions](https://github.com/sghani001/rails-guarddog/discussions)
+[GitHub Issues](https://github.com/sghani001/rails-guarddog/issues) | [GitHub Discussions](https://github.com/sghani001/rails-guarddog/discussions)
 
 ---
 
 ## 📄 License
 
-MIT License - Free to use and modify
-
-```
-Copyright (c) 2026 Rails GuardDog Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software")...
-```
+MIT License - Free to use and modify. See [LICENSE](LICENSE) for details.
 
 ---
 
@@ -368,16 +360,5 @@ of this software and associated documentation files (the "Software")...
 - **Changelog:** https://github.com/sghani001/rails-guarddog/releases
 
 ---
-
-## 👋 Support
-
-- 📖 [Full Documentation](README.md)
-- 🚀 [Quick Start Guide](QUICK_START.md)
-- 🔒 [Security Details](SECURITY_COVERAGE.md)
-- 💬 [GitHub Discussions](https://github.com/sghani001/rails-guarddog/discussions)
-
----
-
-**v0.1.0** | **Production Ready** | **MIT License** | ⭐ [Star on GitHub](https://github.com/sghani001/rails-guarddog)
 
 *Beyond brakeman. Detect what others miss.* 🐕🔒
