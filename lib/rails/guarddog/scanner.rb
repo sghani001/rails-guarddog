@@ -9,11 +9,10 @@ module Rails
       end
 
       def run
-        checkers = load_checkers
-        checkers.each do |checker|
-          checker_instance = checker.new(@configuration.root)
-          checker_instance.run
-          @findings.concat(checker_instance.findings)
+        load_checkers.each do |checker_class|
+          checker = checker_class.new(@configuration.root)
+          checker.run
+          @findings.concat(checker.findings)
         end
         @findings.sort_by { |f| severity_order(f.severity) }
       end
@@ -21,12 +20,20 @@ module Rails
       private
 
       def load_checkers
-        checkers_dir = File.expand_path('../guarddog/checkers', __FILE__)
-        Dir.glob("#{checkers_dir}/*_checker.rb").reject { |f| f.include?('base_checker') }.map do |file|
-          require file
-          class_name = File.basename(file, '.rb').camelize
-          Checkers.const_get(class_name)
-        end.compact
+        [
+          Checkers::SqlInjectionChecker,
+          Checkers::XssChecker,
+          Checkers::CsrfChecker,
+          Checkers::MassAssignmentChecker,
+          Checkers::OpenRedirectChecker,
+          Checkers::SecretsChecker,
+          Checkers::DosChecker,
+          Checkers::IdorChecker,
+          Checkers::AiInjectionChecker,
+          Checkers::RateLimitChecker,
+          Checkers::DependencyChecker,
+          Checkers::GraphqlChecker
+        ]
       end
 
       def severity_order(severity)
