@@ -1,13 +1,18 @@
 module Rails
   module Guarddog
     class Configuration
-      attr_accessor :root, :enabled_checkers, :excluded_paths, :output_format
+      attr_writer :root
+      attr_accessor :enabled_checkers, :excluded_paths, :output_format
 
       def initialize
-        @root = Rails.root.to_s
+        @root = nil
         @enabled_checkers = all_checkers
         @excluded_paths = %w[vendor spec test node_modules]
         @output_format = :console
+      end
+
+      def root
+        @root || Rails.root.to_s
       end
 
       def all_checkers
