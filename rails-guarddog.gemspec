@@ -1,6 +1,7 @@
+require_relative "lib/rails/guarddog/version"
 Gem::Specification.new do |spec|
   spec.name          = "rails-guarddog"
-  spec.version       = "0.1.0"
+  spec.version       = spec.version = Rails::Guarddog::VERSION
   spec.authors       = ["Security Team"]
   spec.email         = ["security@example.com"]
   spec.summary       = "Advanced security checker for Rails apps"
