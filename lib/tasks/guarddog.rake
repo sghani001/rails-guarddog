@@ -1,5 +1,5 @@
 namespace :guarddog do
-  task :scan do
+  task :scan => :environment do
     require 'rails/guarddog'
     
     scanner = Rails::Guarddog::Scanner.new
